@@ -1,0 +1,3 @@
+gym[atari]==0.15.7
+matplotlib==3.1.1
+opencv-python
