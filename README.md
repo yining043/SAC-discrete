@@ -54,7 +54,7 @@ python ./plot_progress.py  --env BeamRider
 
 # To reload the trained model:
 ```
-python ./load_atari_model.py  --env BeamRider --model_id 4
+python ./load_atari_model.py  --env BeamRider --model_id 5
 ```
 
 After the command is executed, the program will run the atari game 5 times and calculate the mean of cumulated reward and clipped reward (+1 for positive reward, -1 for negative reward, 0 for no reward).
