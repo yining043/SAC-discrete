@@ -89,8 +89,8 @@ def load_and_test_model(model_dir, model_save_name):
                 else:
                     # Take  lower variance actions at test(noise_scale=0.05)
                     a = get_action(test_state, False)
-                    action_prob = get_action_probabilistic(test_state)
-                    log_action_prob = get_action_log_probabilistic(test_state)
+                    #action_prob = get_action_probabilistic(test_state)
+                    #log_action_prob = get_action_log_probabilistic(test_state)
 
                 # Take deterministic actions at test time
                 o, r, d, _ = test_env.step(a)

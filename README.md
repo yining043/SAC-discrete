@@ -5,6 +5,11 @@
 
 Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018 https://arxiv.org/abs/1801.01290
 
+# Recorded gif:
+![Breakout](./saved_models/Breakout.gif)
+![SpaceInvaders](./saved_models/SpaceInvaders.gif)
+![BeamRider](./saved_models/BeamRider.gif)
+
 
 # Dependencies:
 ```
