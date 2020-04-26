@@ -121,7 +121,7 @@ env.metadata
 ```
         
 
-# A example for reloading:
+# An example for reloading:
 ```
 python ./load_atari_model.py  --env BeamRider --model_id 5 --seed 3
 ```
