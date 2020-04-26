@@ -186,7 +186,7 @@ def sac(env_fn, logger_kwargs=dict(), network_params=dict(), rl_params=dict()):
         act_op = mu if deterministic else pi
         return sess.run(act_op, feed_dict={x_ph: [state]})[0]
 
-    def reset(env, state_buffer):
+    def env(env, state_buffer):
         o, r, d, ep_ret, ep_len = env.reset(), 0, False, 0, 0
 
         # fire to start game and perform no-op for some frames to randomise start
@@ -362,6 +362,7 @@ if __name__ == '__main__':
                         , required=True)
     parser.add_argument('--use_gpu', action='store_true', default=False)
     parser.add_argument('--gpu', type=str, default='0')
+    parser.add_argument('--seed', type=str, default='3')
     args = parser.parse_args()
 
 
@@ -401,7 +402,7 @@ if __name__ == '__main__':
         'thresh':False,
 
         # control params
-        'seed':int(3),
+        'seed':int(params['seed']),
         'epochs':int(250),
         'steps_per_epoch':10000,
         'replay_size':int(4e5),

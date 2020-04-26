@@ -44,22 +44,23 @@ cd ..
 
 ```
 #train with GPU
-python ./image_observation/sac_discrete_atari/sac.py --env 'Breakout' --use_gpu --gpu 1
+python ./image_observation/sac_discrete_atari/sac.py --env 'Breakout' --use_gpu --gpu 1 --seed 3
 
 #train with CPU
-python ./image_observation/sac_discrete_atari/sac.py --env 'Breakout'
+python ./image_observation/sac_discrete_atari/sac.py --env 'Breakout' --seed 3
 
 ```
 After training the model will be saved in dir ./saved_models/
 
 # To plot the training curve:
 ```
-python ./plot_progress.py  --env BeamRider
+python ./plot_progress.py  --env BeamRider --seed 3
 ```
+The same seed for training should be given.
 
 # To reload the trained model:
 ```
-python ./load_atari_model.py  --env BeamRider --model_id 5
+python ./load_atari_model.py  --env BeamRider --model_id 5 --seed 3
 ```
 
 After the command is executed, the program will run the atari game 5 times and calculate the mean of cumulated reward and clipped reward (+1 for positive reward, -1 for negative reward, 0 for no reward).
@@ -82,4 +83,13 @@ get_action_log_probabilistic(test_state)
 
 # Notice:
 
-SAC-discrete works well for Atari game Space Invaders, Qbert, Breakout, BeamRider, but perform terrible for Pong, Freeway; other environments are testing...
+SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, BeamRider, but performs terrible for Pong, Freeway; other environments are testing...
+
+|  Works well  | Doesn't work | Still testing |
+|  ----:  | ----:  | ----:  | 
+| Breakout  | Battlezone | Jamesbond|
+| Qbert  | Seaquest | Asterix|
+| SpaceInvaders  | Pong | |
+| Enduro  | Freeway | |
+| Assault  | Berzerk | |
+| BeamRider  |  | |

@@ -129,12 +129,14 @@ if __name__ == '__main__':
     parser.add_argument('--env', type=str, help='choices:SpaceInvaders, Breakout, BeamRider, Qbert, ...'
                         , required=True)
     parser.add_argument('--model_id', type=str, required=True)
+    parser.add_argument('--seed', type=str, default='3')
     args = parser.parse_args()
     params = vars(args)
 
     env_id = params['env']
     model_id = params['model_id']
+    seed = params['seed']
     
-    model_dir = 'saved_models/sac_discrete_atari_'+env_id+'-v4/sac_discrete_atari_'+env_id+'-v4_s3/'
+    model_dir = 'saved_models/sac_discrete_atari_'+env_id+'-v4/sac_discrete_atari_'+env_id+'-v4_s'+seed+'/'
     model_save_name = 'tf1_save' + model_id
     load_and_test_model(model_dir, model_save_name)

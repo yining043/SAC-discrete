@@ -33,14 +33,17 @@ def plot_progress(progess_file):
 
 
 if __name__ == '__main__':
+    
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--env', type=str, help='choices:SpaceInvaders, Breakout, BeamRider, Qbert, ...'
                         , required=True)
+    parser.add_argument('--seed', type=str, default='3')
     args = parser.parse_args()
     params = vars(args)
     
     env_id = params['env']
+    seed = params['seed']
     # model_dir = 'saved_models/sac_discrete_kl_atari_BreakoutDeterministic-v4/sac_discrete_kl_atari_BreakoutDeterministic-v4_s1/'
-    progess_file = 'saved_models/sac_discrete_atari_'+env_id+'-v4/sac_discrete_atari_'+env_id+'-v4_s3/progress.txt'
+    progess_file = 'saved_models/sac_discrete_atari_'+env_id+'-v4/sac_discrete_atari_'+env_id+'-v4_s'+seed+'/progress.txt'
     plot_progress(progess_file)
