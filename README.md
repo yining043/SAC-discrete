@@ -143,3 +143,8 @@ SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, Bea
 | Enduro  | Freeway | |
 | Assault  | Berzerk | |
 | BeamRider  |  | |
+
+# One more thing
+
+The saved_models folder can also be downloaded via Google drive:
+https://drive.google.com/drive/folders/1g0y0XKrMw5hUUfcuH5fyeaGHWTUuwxU_?usp=sharing
