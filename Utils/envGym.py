@@ -17,7 +17,7 @@ class envGym:
         self.state_buffer = self.StateBuffer(m=stack)
         self.action_space = self.env.action_space
         self.metadata = self.env.metadata
-        self.observation_space = self.env.observation_space
+        self.observation_space = [84,84,4]
         self.reward_range = self.env.reward_range
         
         
@@ -110,13 +110,13 @@ class envGym:
         return state, r, d, _
     
     def render(self, mode='human', **kwargs):
-        self.env.render(mode, **kwargs)
+        return self.env.render(mode, **kwargs)
         
     def seed(self, seed=None):
-        self.env.seed(seed)
+        return self.env.seed(seed)
         
     
         
     def close(self):
-        self.env.close()
+        return self.env.close()
         

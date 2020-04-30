@@ -6,9 +6,9 @@
 Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018 https://arxiv.org/abs/1801.01290
 
 # Recorded gif:
-![Breakout](./saved_models/Breakout.gif)
-![SpaceInvaders](./saved_models/SpaceInvaders.gif)
-![BeamRider](./saved_models/BeamRider.gif)
+![Breakout](./saved_gifs/Breakout.gif)
+![SpaceInvaders](./saved_gifs/SpaceInvaders.gif)
+![BeamRider](./saved_gifs/BeamRider.gif)
 
 
 # Dependencies:
@@ -123,16 +123,20 @@ env.metadata
 
 # An example for reloading:
 ```
-python ./load_atari_model.py  --env BeamRider --model_id 5 --seed 3
+python ./load_atari_model.py  --env BeamRider --model_id 24 --seed 3
 ```
 
 After the command is executed, the program will run the atari game 5 times and calculate the mean of cumulated reward and clipped reward (+1 for positive reward, -1 for negative reward, 0 for no reward).
 
 See the source code for details.
 
+# To record a gif:
+```
+python ./record_a_gif.py  --env BeamRider --model_id 24 --seed 3 --max_len 10000 --num 5
+```
+The created gifs will be saved to ./saved_gifs folder
 
 # Notice:
-
 SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, BeamRider, but performs terrible for Pong, Freeway; other environments are testing...
 
 |  Works well  | Doesn't work | Still testing |
@@ -145,6 +149,5 @@ SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, Bea
 | BeamRider  |  | |
 
 # One more thing
-
-The saved_models folder can also be downloaded via Google drive:
+Due to the limit that Github cannot share large files, please download the saved_models folder via Google drive:
 https://drive.google.com/drive/folders/1g0y0XKrMw5hUUfcuH5fyeaGHWTUuwxU_?usp=sharing
