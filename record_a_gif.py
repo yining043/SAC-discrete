@@ -56,7 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_id', type=str, required=True)
     parser.add_argument('--seed', type=str, default='3')
     parser.add_argument('--num', type=int, default='5')
-    parser.add_argument('--max_len', type=int, default='100000')
+    parser.add_argument('--max_len', type=int, default='6000')
     args = parser.parse_args()
     params = vars(args)
 

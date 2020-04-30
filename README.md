@@ -6,11 +6,12 @@
 Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018 https://arxiv.org/abs/1801.01290
 
 # Recorded gif:
+![BeamRider](./saved_gifs/BeamRider.gif)
+![Enduro](./saved_gifs/Enduro.gif)
 ![Breakout](./saved_gifs/Breakout.gif)
 ![SpaceInvaders](./saved_gifs/SpaceInvaders.gif)
-![BeamRider](./saved_gifs/BeamRider.gif)
-
-
+![Qbert](./saved_gifs/Qbert.gif)
+![Assault](./saved_gifs/Assault.gif)
 # Dependencies:
 ```
 tensorflow 1.15.0
@@ -139,15 +140,14 @@ The created gifs will be saved to ./saved_gifs folder
 # Notice:
 SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, BeamRider, but performs terrible for Pong, Freeway; other environments are testing...
 
-|  Works well  | Doesn't work | Still testing |
+|  Works well  | Not bad| Doesn't work |
 |  ----:  | ----:  | ----:  | 
-| Breakout  | Battlezone | Jamesbond|
-| Qbert  | Seaquest | Asterix|
-| SpaceInvaders  | Pong | |
-| Enduro  | Freeway | |
-| Assault  | Berzerk | |
-| BeamRider  |  | |
+| Assault  | Qbert| Battlezone | |
+|  BeamRider | Breakout| Seaquest | |
+| SpaceInvaders  || Pong | |
+| Enduro  || Asterix | |
+|   || Berzerk | |
 
 # One more thing
-Due to the limit that Github cannot share large files, please download the saved_models folder via Google drive:
+Due to the limit of Github to share large files, please download the saved_models folder via Google drive:
 https://drive.google.com/drive/folders/1g0y0XKrMw5hUUfcuH5fyeaGHWTUuwxU_?usp=sharing
