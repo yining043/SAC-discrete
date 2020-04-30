@@ -16,6 +16,7 @@ def load_and_test_model(model_dir, model_save_name, render=True):
     # test our model 
     _rew = []
     _ret = []
+    _len = []
     n = 5 # run 5 times
         
     for j in range(n):
@@ -37,12 +38,14 @@ def load_and_test_model(model_dir, model_save_name, render=True):
 
         if render: env.close()
         
-        print('Ep Return: ', ep_ret, 'Ep Reward: ', ep_rew)
+        print('Ep Return: ', ep_ret, 'Ep Reward: ', ep_rew, 'Ep_len: ', ep_len)
         _rew.append(ep_rew)
         _ret.append(ep_ret)
+        _len.append(ep_len)
         
     print('mean Ep Return: ', np.mean(np.array(_ret)))
     print('mean Ep Reward: ', np.mean(np.array(_rew)))
+    print('mean Ep Length: ', np.mean(np.array(_len)))
 
 if __name__ == '__main__':
     
