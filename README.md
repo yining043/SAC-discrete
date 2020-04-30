@@ -141,11 +141,11 @@ SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, Bea
 
 |  Works well  | Not bad| Doesn't work |
 |  ----:  | ----:  | ----:  | 
-| Assault  | Qbert| Battlezone | |
+| Assault  | Qbert| Pong | |
 |  BeamRider | Breakout| Seaquest | |
-| SpaceInvaders  || Pong | |
-| Enduro  || Asterix | |
-|   || Berzerk | |
+| SpaceInvaders  || Battlezone | |
+| Enduro  || Berzerk | |
+|   || Asterix | |
 
 # One more thing
 Due to the limit of Github to share large files, please download the saved_models folder via Google drive:
