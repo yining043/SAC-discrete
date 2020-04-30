@@ -11,7 +11,6 @@ Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a
 ![Breakout](./saved_gifs/Breakout.gif)
 ![SpaceInvaders](./saved_gifs/SpaceInvaders.gif)
 ![Qbert](./saved_gifs/Qbert.gif)
-![Assault](./saved_gifs/Assault.gif)
 # Dependencies:
 ```
 tensorflow 1.15.0
