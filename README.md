@@ -140,12 +140,12 @@ The created gifs will be saved to ./saved_gifs folder
 SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, BeamRider, but performs terrible for Pong, Freeway; other environments are testing...
 
 |  Works well  | Not bad| Doesn't work |
-|  ----:  | ----: | ----:
-| Assault      | Qbert      |Pong | ||
-|  BeamRider   | Breakout   |Seaquest | |
-| SpaceInvaders|            |Battlezone | |
-| Enduro       | ||Berzerk    |
-|              | ||Asterix    |
+|  ----:  | ----: | ----:|
+| Assault      | Breakout      |Pong | 
+|  BeamRider   | SpaceInvaders   |Seaquest | 
+| Enduro| Qbert        |Battlezone |
+|        | |Berzerk    |
+|              | |Asterix    |
 
 Main results:
 |  env  |model_id| seed| Deterministic?| avg_reward(return)| avg_ep_length|
