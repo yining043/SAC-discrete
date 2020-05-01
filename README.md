@@ -139,13 +139,24 @@ The created gifs will be saved to ./saved_gifs folder
 # Notice:
 SAC-discrete works well for some Atari game Space Invaders, Qbert, Breakout, BeamRider, but performs terrible for Pong, Freeway; other environments are testing...
 
-|  Works well  |model_id| Not bad| model_id| Doesn't work |
-|  ----:  |  :----:| ----:|:----:  | ----:
-| Assault      |20| Qbert      | 24|Pong | ||
-|  BeamRider   |24| Breakout   | 6|Seaquest | |
-| SpaceInvaders|20|            |  |Battlezone | |
-| Enduro       |12| ||Berzerk    | |
-|              |  | ||Asterix    | |
+|  Works well  | Not bad| Doesn't work |
+|  ----:  | ----: | ----:
+| Assault      | Qbert      |Pong | ||
+|  BeamRider   | Breakout   |Seaquest | |
+| SpaceInvaders|            |Battlezone | |
+| Enduro       | ||Berzerk    |
+|              | ||Asterix    |
+
+Main results:
+|  env  |model_id| seed| Deterministic?| avg_reward(return)| avg_ep_length|
+|  ----:  |  ----:| ----:|----:|----: | ----:
+| Assault      |20| 6   | False |   820.8 (+39.2)|  1038.4
+|  Enduro      |12| 3   | True  |   322.1 (+402.2)| 7098.8
+|  BeamRider   |24| 3   | False |   1636.8 (+34.9)|  2052.9
+| SpaceInvaders|20| 6   | False |   363.0 (+23.6) |   891.7
+| Breakout     |6 | 6   | True  |   24.8 (+18.8)  |   988.1
+|  Qbert       |24| 6   | True  |   850.0 (+22.9) |   600.8    
+
 
 # One more thing
 Due to the limit of Github to share large files, please download the saved_models folder via Google drive:

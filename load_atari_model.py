@@ -4,7 +4,7 @@ from Utils.envGym import envGym
 from Utils.model_loader import model_loader
 
 
-def load_and_test_model(model_dir, model_save_name, render=True):
+def load_and_test_model(model_dir, model_save_name, render=True, deterministic = False):
 
     # load out model
     model = model_loader(model_dir, model_save_name)
@@ -27,7 +27,8 @@ def load_and_test_model(model_dir, model_save_name, render=True):
         if render: env.render()
         
         while not(done or (ep_len == model.max_ep_len)):
-            action = model.get_action(obs, False)
+            action = model.get_action(obs, deterministic)
+            
             #action_prob = get_action_probabilistic(test_state)
             #log_action_prob = get_action_log_probabilistic(test_state)
             obs, rew, done, info = env.step(action)
@@ -55,13 +56,15 @@ if __name__ == '__main__':
                         , required=True)
     parser.add_argument('--model_id', type=str, required=True)
     parser.add_argument('--seed', type=str, default='3')
+    parser.add_argument('--sample', action="store_true")
     args = parser.parse_args()
     params = vars(args)
 
     env_id = params['env']
     model_id = params['model_id']
     seed = params['seed']
+    d = not params['sample']
     
     model_dir = 'saved_models/sac_discrete_atari_'+env_id+'-v4/sac_discrete_atari_'+env_id+'-v4_s'+seed+'/'
     model_save_name = 'tf1_save' + model_id
-    load_and_test_model(model_dir, model_save_name)
+    load_and_test_model(model_dir, model_save_name,deterministic = d)
