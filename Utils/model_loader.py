@@ -54,3 +54,7 @@ class model_loader:
         state = state.astype('float32') / 255.
         act_op = self.mu if deterministic else self.pi
         return self.sess.run(act_op, feed_dict={self.x_ph: [state]})[0]
+
+    def close(self):
+        del self.model, self.sess
+        tf.keras.backend.clear_session()
