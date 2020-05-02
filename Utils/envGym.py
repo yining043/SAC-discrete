@@ -8,16 +8,21 @@ Created on Sun Apr 26 17:23:20 2020
 
 import numpy as np
 import cv2
+import gym
 
 
 class envGym:
 
     def __init__(self,env, stack):
+        gym.logger.set_level(40)
         self.env = env
         self.state_buffer = self.StateBuffer(m=stack)
         self.action_space = self.env.action_space
         self.metadata = self.env.metadata
-        self.observation_space = self.env.observation_space
+        self.observation_space = gym.spaces.Box(
+            low = np.min(self.env.observation_space.low)*1.0, 
+            high = np.max(self.env.observation_space.high)*1.0, 
+            shape = (84,84,4), dtype=np.float32)
         self.reward_range = self.env.reward_range
         
         self.ep_len = 0
