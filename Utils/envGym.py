@@ -17,8 +17,11 @@ class envGym:
         self.state_buffer = self.StateBuffer(m=stack)
         self.action_space = self.env.action_space
         self.metadata = self.env.metadata
-        self.observation_space = [84,84,4]
+        self.observation_space = self.env.observation_space
         self.reward_range = self.env.reward_range
+        
+        self.ep_len = 0
+        self.rp_rew = 0
         
         
         
@@ -87,6 +90,8 @@ class envGym:
 
     def reset(self):
         o = self.env.reset()
+        self.ep_len = 0
+        self.rp_rew = 0
     
         # fire to start game and perform no-op for some frames to randomise start
         o, _, _, _ = self.env.step(1) # Fire action to start game
@@ -100,23 +105,38 @@ class envGym:
 
     def step(self, action):
         old_lives = self.env.ale.lives()
-        o, r, d, _ = self.env.step(action)
+        o, r, done, info = self.env.step(action)
         o = self.process_image_observation(o)
         state = self.state_buffer.append_state(o)
-        if self.env.ale.lives() < old_lives:
-            o, r, d, _ = self.env.step(1)
+        self.ep_len += 1
+        self.rp_rew += r
+        if self.env.ale.lives() < old_lives and self.env.ale.lives() > 0:
+            o, r, done, info = self.env.step(1)
+            self.ep_len += 1
+            self.rp_rew += r
             o = self.process_image_observation(o)
             state = self.state_buffer.append_state(o)
-        return state, r, d, _
+        
+        if done:
+            if 'episode' not in info.keys():
+                info['episode'] = {'r':self.rp_rew, 'l': self.ep_len}
+            else:
+                info['_episode'] = {'r':self.rp_rew, 'l': self.ep_len}
+        else:
+            if 'stats' not in info.keys():
+                info['stats'] = {'r':self.rp_rew, 'l': self.ep_len}
+            else:
+                info['stats'] = {'r':self.rp_rew, 'l': self.ep_len}
+        return state, r, done, info
     
     def render(self, mode='human', **kwargs):
-        return self.env.render(mode, **kwargs)
+        self.env.render(mode, **kwargs)
         
     def seed(self, seed=None):
-        return self.env.seed(seed)
+        self.env.seed(seed)
         
     
         
     def close(self):
-        return self.env.close()
+        self.env.close()
         
