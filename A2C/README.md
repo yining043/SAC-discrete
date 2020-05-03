@@ -48,20 +48,18 @@ Main results:
 |  Qbert       |final| 6   | True  |   290 (+11.6) |   414.6    
 
 
-# One more thing
-Due to the limit of Github to share large files, please download the saved_models folder via Google drive:
-https://drive.google.com/drive/folders/1g0y0XKrMw5hUUfcuH5fyeaGHWTUuwxU_?usp=sharing
 
-# To calculate the avg entropy for attack
+
+# To calculate the avg entropy for attack - A2C
 ```
 python ./get_evg_entropy.py
 ```
 The results:
 ```
-mean Entropy for Qbert-v4 0.5283024787481685
-mean Entropy for Assault-v4 0.5265025734385411
-mean Entropy for Enduro-v4 0.2922887822680233
-mean Entropy for BeamRider-v4 0.4767544871332122
-mean Entropy for SpaceInvaders-v4 0.6042465290228025
-mean Entropy for Breakout-v4 0.6128823243743766
+mean Entropy for Assault-v4 0.5689810415866755
+mean Entropy for Enduro-v4 0.999998979032379
+mean Entropy for BeamRider-v4 0.9901177356752034
+mean Entropy for SpaceInvaders-v4 0.6189367346611049
+mean Entropy for Breakout-v4 0.9790558607589552
+mean Entropy for Qbert-v4 0.8099412249717282
 ```
