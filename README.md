@@ -162,7 +162,7 @@ Main results:
 Due to the limit of Github to share large files, please download the saved_models folder via Google drive:
 https://drive.google.com/drive/folders/1g0y0XKrMw5hUUfcuH5fyeaGHWTUuwxU_?usp=sharing
 
-# To calculate the avg entropy for attack
+# To calculate the avg entropy of action probability
 ```
 python ./get_evg_entropy.py
 ```
